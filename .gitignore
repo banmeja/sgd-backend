@@ -1,0 +1,6 @@
+# Archivos y carpetas de Eclipse
+.project
+.classpath
+.settings/
+
+node_modules
