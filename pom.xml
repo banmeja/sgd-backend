@@ -99,7 +99,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.3.3</version>
                   <configuration>
-				    <mainClass>gt.sgd.SgdBackendApplication</mainClass>
+				    <mainClass>gt.sgd.sgdbackend.SgdBackendApplication</mainClass>
 				  </configuration>
             </plugin>
 

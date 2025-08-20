@@ -33,3 +33,25 @@ Aceptá todo y cerrá. -copilot
 Si es la version mvnd es una version mejorada
 
 Añadir al path de variables de sistema JAVA_HOME apuntando a jdk17 para que funcione mvnd
+
+### Errores
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.568 s (Wall Clock)
+[INFO] Finished at: 2025-08-20T15:51:36-06:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.3.3:run (default-cli) on project sgd-backend: Process terminated with exit code: 1 -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+C:\Users\PC\eclipse-workspace-sgd\sgd-backend>mvnd spring-boot:run
+
+Configuracion en el archivo .pom
+En: 
+<mainClass>gt.sgd.SgdBackendApplication</mainClass>
+Correcto:
+<mainClass>gt.sgd.sgdbackend.SgdBackendApplication</mainClass>
