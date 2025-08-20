@@ -28,3 +28,8 @@ En "Variables del sistema", buscá Path y hacé clic en Editar.
 Agregá una nueva entrada con la ruta del paso anterior: C:\Program Files\Apache\Maven\bin
 
 Aceptá todo y cerrá. -copilot
+
+## Configuraciones adicionales
+Si es la version mvnd es una version mejorada
+
+Añadir al path de variables de sistema JAVA_HOME apuntando a jdk17 para que funcione mvnd
