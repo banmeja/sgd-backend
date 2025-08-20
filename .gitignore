@@ -2,6 +2,21 @@
 .project
 .classpath
 .settings/
+
+# Archivos generados por Maven/Gradle
 target/
+bin/
+build/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+
+# Archivos de configuración personales
+*.iml
+.idea/
 
 node_modules

@@ -9,6 +9,8 @@
     <packaging>jar</packaging>
     <name>SGD Backend</name>
     <description>Sistema de Gestión Documental - Backend</description>
+    
+   
 
     <!-- Propiedades globales -->
     <properties>
@@ -96,6 +98,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.3.3</version>
+                  <configuration>
+				    <mainClass>gt.sgd.SgdBackendApplication</mainClass>
+				  </configuration>
             </plugin>
 
             <!-- Asegurar compilación con Java 17 -->
@@ -110,5 +115,14 @@
             </plugin>
         </plugins>
     </build>
+    
+    <profiles>
+	  <profile>
+	    <id>prod</id>
+	    <properties>
+	      <spring.profiles.active>prod</spring.profiles.active>
+	    </properties>
+	  </profile>
+	</profiles>
   
 </project>
