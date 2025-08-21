@@ -13,3 +13,9 @@ Base y esquema de proyecto sgd
 - Spring Boot maneja lógica principal y conexión a Oracle.
 - Oracle almacena datos
 
+### Iniciar en consola
+Bash:
+-Dspring.profiles.active= nombreEntorno
+
+Maven:
+mvnd spring-boot:run -Dspring-boot.run.profiles=prod

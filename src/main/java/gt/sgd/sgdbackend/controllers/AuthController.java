@@ -21,13 +21,8 @@ public class AuthController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody LoginRequest request){
-	    try {
-	        JwtAuthenticationResponse jwtResponse = authService.login(request);
-	        return ResponseEntity.ok(jwtResponse);
-	    } catch (BadCredentialsException | UsernameNotFoundException e) {
-	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-	            .body(new RespuestaMsg("Usuario o contraseña incorrectos"));
-	    }
+	    JwtAuthenticationResponse jwtResponse = authService.login(request);
+	    return ResponseEntity.ok(jwtResponse);
 	}
 
 }

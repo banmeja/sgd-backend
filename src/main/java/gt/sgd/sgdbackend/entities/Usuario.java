@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.JoinColumn;
@@ -13,25 +15,27 @@ import jakarta.persistence.JoinColumn;
 import java.util.Set;
 
 @Entity
+@Table(name = "TC_USUARIO")
 public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+	@Id
+	@Column(name = "ID_USUARIO")
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(name = "USERNAME",unique = true, nullable = false)
     private String username;
 
-    @Column(nullable = false)
+    @Column(name = "PASSWORD_HASH", nullable = false)
     private String password;
     
-    @Column(nullable = false)
-    private boolean activo;
+    @Column(name = "ACTIVO", nullable = false)
+    private char activo;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-        name = "usuario_roles",
-        joinColumns = @JoinColumn(name = "usuario_id"),
-        inverseJoinColumns = @JoinColumn(name = "rol_id")
+        name = "TT_USUARIO_ROL",
+        joinColumns = @JoinColumn(name = "ID_USUARIO"),
+        inverseJoinColumns = @JoinColumn(name = "ID_ROL")
     )
     private Set<Rol> roles;
 
@@ -40,11 +44,11 @@ public class Usuario {
         return id;
     }
     
-	public boolean isActivo() {
-	    return activo;
-	}
+    public boolean isActivo() {
+        return this.activo == 'S' || this.activo == 's';
+    }
 
-	public void setActivo(boolean activo) {
+	public void setActivo(char activo) {
 	    this.activo = activo;
 	}
 
